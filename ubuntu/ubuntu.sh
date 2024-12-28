@@ -18,7 +18,7 @@ git config --global user.name "Phelipe Correa"
 # ssh-add ~/.ssh/phcorrea\@github.com
 
 # Common Lib
-sudo apt install -y curl ca-certificates htop gnupg2 bison
+sudo apt install -y curl ca-certificates htop gnupg2 bison neovim libedit-dev i3 i3-wm
 
 # NodeJS 23
 
@@ -73,14 +73,41 @@ source ~/.gvm/scripts/gvm
 gvm install go1.4 -B
 gvm use go1.4
 export GOROOT_BOOTSTRAP=$GOROOT
-#gvm install go1.7
-#gvm use go1.7
 gvm install go1.17.13
 gvm use go1.17.13
+export GOROOT_BOOTSTRAP=$GOROOT
+gvm install go1.20
+gvm use go1.20
 export GOROOT_BOOTSTRAP=$GOROOT
 gvm install go1.23.4
 gvm use go1.23.4
 
+# PyEnv
+# https://github.com/pyenv/pyenv
 
+# sudo apt install -y zlib1g zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev tk-dev libedit-dev liblzma-dev libreadline-dev
+sudo apt install \
+    build-essential \
+    curl \
+    libbz2-dev \
+    libffi-dev \
+    liblzma-dev \
+    libncursesw5-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    libssl-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
+    llvm \
+    make \
+    tk-dev \
+    wget \
+    xz-utils \
+    zlib1g-dev
+curl https://pyenv.run | bash
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init - bash)"' >> ~/.bashrc
 
+pyenv install 3
 
